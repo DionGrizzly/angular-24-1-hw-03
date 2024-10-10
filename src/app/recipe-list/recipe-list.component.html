@@ -1,0 +1,11 @@
+<select [(ngModel)]="recipeSort">
+    <option value="default">звичайне сортування</option>
+    <option value="byDate">сортування за датою</option>
+</select>
+<ul>
+    <li *ngFor="let i of getSortedRecipeList()">
+        <p><i>{{ i.author }}</i></p>
+        <p>{{ i.text }}</p>
+        <p><b>Дата створення:</b> {{ i.date | date:'dd.MM.yyyy' }}</p>
+    </li>
+</ul>
